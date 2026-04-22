@@ -78,9 +78,6 @@ For services or inquiries:
 
 ---
 
-## 📷 Preview
-
-(Add screenshots of your website here)
 
 ---
 
