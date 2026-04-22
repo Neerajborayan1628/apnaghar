@@ -1,0 +1,17 @@
+<svg width="340" height="72" viewBox="0 0 340 72" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Apna Ghar Care</title>
+  <desc id="logoDesc">A house shaped logo with gradient accent and brand text.</desc>
+  <defs>
+    <linearGradient id="roofGradient" x1="8" y1="8" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B5ED7"/>
+      <stop offset="1" stop-color="#1F9D63"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="64" height="64" rx="16" fill="#EAF3FF"/>
+  <path d="M14 38L36 20L58 38" stroke="url(#roofGradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20 37.5V52C20 53.6569 21.3431 55 23 55H49C50.6569 55 52 53.6569 52 52V37.5" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
+  <rect x="31.5" y="44" width="9" height="11" rx="2" fill="#1F9D63"/>
+  <circle cx="54" cy="18" r="5" fill="#0B5ED7" fill-opacity="0.2"/>
+  <text x="78" y="35" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Apna Ghar Care</text>
+  <text x="78" y="53" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500">We care for your home like our own</text>
+</svg>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Pricing | Apna Ghar Care</title>
+    <meta
+      name="description"
+      content="Affordable and transparent pricing for home services in Tricity. Choose Basic, Standard, Premium, or Custom plans with Apna Ghar Care."
+    />
+    <meta
+      name="keywords"
+      content="Pricing Tricity, Home Service Pricing Tricity, Property Management Tricity"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .pricing-toggle-wrap {
+        margin-top: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px;
+        border-radius: 999px;
+        border: 1px solid #d7e7ff;
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .toggle-label {
+        font-weight: 700;
+        color: #e8f2ff;
+        font-size: 0.9rem;
+      }
+
+      .toggle-label.active {
+        color: #ffffff;
+      }
+
+      .pricing-switch {
+        position: relative;
+        width: 54px;
+        height: 30px;
+        display: inline-block;
+      }
+
+      .pricing-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .switch-slider {
+        position: absolute;
+        inset: 0;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.34);
+        cursor: pointer;
+        transition: background 0.25s ease;
+      }
+
+      .switch-slider::before {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        left: 4px;
+        top: 4px;
+        background: #ffffff;
+        transition: transform 0.25s ease;
+      }
+
+      .pricing-switch input:checked + .switch-slider::before {
+        transform: translateX(24px);
+      }
+
+      .pricing-switch input:checked + .switch-slider {
+        background: rgba(31, 157, 99, 0.62);
+      }
+
+      .price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+      }
+
+      .price-period {
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .save-tag {
+        margin: 6px 0 0;
+        display: none;
+        color: #0f9f61;
+        font-weight: 700;
+        font-size: 0.86rem;
+      }
+
+      .save-tag.show {
+        display: block;
+      }
+
+      .payment-demo {
+        margin-top: 28px;
+        border: 1px solid #dbe7fb;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 14px 30px rgba(17, 24, 39, 0.08);
+        padding: 22px;
+      }
+
+      .payment-demo h3 {
+        margin: 0 0 6px;
+      }
+
+      .payment-demo p {
+        margin: 0 0 14px;
+        color: var(--muted);
+      }
+
+      .payment-options {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .payment-pill {
+        border: 1px solid #d6e5fb;
+        border-radius: 12px;
+        padding: 10px;
+        text-align: center;
+        font-weight: 700;
+        color: #1f3f7a;
+        background: #f8fbff;
+      }
+
+      @media (max-width: 780px) {
+        .payment-options {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body class="page-pricing">
+    <div id="preloader" class="preloader">
+      <div class="loader-dot"></div>
+    </div>
+
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand">
+          <img src="assets/logo.svg" alt="Apna Ghar Care logo" />
+        </a>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="about.html">About</a>
+          <a class="active" href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+          <a class="btn btn-primary" href="contact.html">Book Service</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="pricing-hero section-transition">
+        <div class="pricing-hero-overlay"></div>
+        <div class="container pricing-hero-content">
+          <h1 class="section-title">Our Pricing</h1>
+          <p class="section-text">
+            Affordable and transparent pricing for all home services.
+          </p>
+          <div class="pricing-toggle-wrap" data-reveal>
+            <span id="monthlyLabel" class="toggle-label active">Monthly</span>
+            <label class="pricing-switch" aria-label="Toggle monthly or yearly pricing">
+              <input id="pricingToggle" type="checkbox" />
+              <span class="switch-slider"></span>
+            </label>
+            <span id="yearlyLabel" class="toggle-label">Yearly</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft-bg section-transition">
+        <div class="container">
+          <div class="pricing-grid pricing-page-grid">
+            <article class="pricing-card" data-reveal>
+              <span class="plan-icon">🏠</span>
+              <h3>Basic</h3>
+              <div class="price-row">
+                <p class="price" data-monthly="499" data-yearly="4499">₹499</p>
+                <span class="price-period">/month</span>
+              </div>
+              <p class="save-tag">Save 20% on yearly plan</p>
+              <ul class="feature-list">
+                <li><i class="fa-solid fa-check"></i> Monthly property check</li>
+                <li><i class="fa-solid fa-check"></i> 5 photo updates</li>
+                <li><i class="fa-solid fa-check"></i> Basic support</li>
+              </ul>
+              <a class="btn btn-secondary plan-book" data-plan="Basic" href="#">Book Now</a>
+            </article>
+
+            <article class="pricing-card highlight" data-reveal>
+              <p class="popular-tag">Most Popular</p>
+              <span class="plan-icon">⭐</span>
+              <h3>Standard</h3>
+              <div class="price-row">
+                <p class="price" data-monthly="999" data-yearly="8999">₹999</p>
+                <span class="price-period">/month</span>
+              </div>
+              <p class="save-tag">Save 20% on yearly plan</p>
+              <ul class="feature-list">
+                <li><i class="fa-solid fa-check"></i> Bi-weekly inspection</li>
+                <li><i class="fa-solid fa-check"></i> Cleaning coordination</li>
+                <li><i class="fa-solid fa-check"></i> Priority WhatsApp support</li>
+              </ul>
+              <a class="btn btn-primary plan-book" data-plan="Standard" href="#">Book Now</a>
+            </article>
+
+            <article class="pricing-card" data-reveal>
+              <span class="plan-icon">🛡</span>
+              <h3>Premium</h3>
+              <div class="price-row">
+                <p class="price" data-monthly="1499" data-yearly="12999">₹1499</p>
+                <span class="price-period">/month</span>
+              </div>
+              <p class="save-tag">Save 20% on yearly plan</p>
+              <ul class="feature-list">
+                <li><i class="fa-solid fa-check"></i> Weekly inspections</li>
+                <li><i class="fa-solid fa-check"></i> Maintenance follow-up</li>
+                <li><i class="fa-solid fa-check"></i> Tenant support assistance</li>
+              </ul>
+              <a class="btn btn-secondary plan-book" data-plan="Premium" href="#">Book Now</a>
+            </article>
+
+            <article class="pricing-card" data-reveal>
+              <span class="plan-icon">🧩</span>
+              <h3>Custom Service</h3>
+              <div class="price-row">
+                <p class="price">Custom Quote</p>
+              </div>
+              <ul class="feature-list">
+                <li><i class="fa-solid fa-check"></i> Tailored service scope</li>
+                <li><i class="fa-solid fa-check"></i> Dedicated account support</li>
+                <li><i class="fa-solid fa-check"></i> Flexible scheduling</li>
+              </ul>
+              <a class="btn btn-secondary plan-book" data-plan="Custom Service" href="#">Book Now</a>
+            </article>
+          </div>
+
+          <div class="payment-demo" data-reveal>
+            <h3>Payment Gateway (Demo UI)</h3>
+            <p>
+              Fake checkout preview for frontend demonstration only. No real transaction will be processed.
+            </p>
+            <div class="payment-options">
+              <div class="payment-pill">UPI</div>
+              <div class="payment-pill">Cards</div>
+              <div class="payment-pill">Net Banking</div>
+              <div class="payment-pill">Wallet</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-transition">
+        <div class="container">
+          <h2 class="section-title" data-reveal>Why Choose Us</h2>
+          <div class="trust-badges">
+            <article class="badge" data-reveal>
+              <span class="badge-mark">✔</span>
+              <span><b class="badge-metric">100+</b> Homes Managed</span>
+            </article>
+            <article class="badge" data-reveal>
+              <span class="badge-mark">✔</span>
+              <span>Verified &amp; Professional Staff</span>
+            </article>
+            <article class="badge" data-reveal>
+              <span class="badge-mark">✔</span>
+              <span>Transparent Reports &amp; Billing</span>
+            </article>
+            <article class="badge" data-reveal>
+              <span class="badge-mark">✔</span>
+              <span><b class="badge-metric">24/7</b> WhatsApp Support</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft-bg section-transition">
+        <div class="container">
+          <h2 class="section-title" data-reveal>Pricing FAQs</h2>
+          <div class="faq-grid">
+            <article class="faq-card" data-reveal>
+              <h3>Do you have any hidden charges?</h3>
+              <p>No. All plans are transparent, and we share costs before work starts.</p>
+            </article>
+            <article class="faq-card" data-reveal>
+              <h3>Can I switch plans later?</h3>
+              <p>Yes, you can upgrade or change your plan anytime based on your needs.</p>
+            </article>
+            <article class="faq-card" data-reveal>
+              <h3>Do you provide custom packages?</h3>
+              <p>Yes. We create custom service packages based on your property and budget.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-transition">
+        <div class="container cta-block" data-reveal>
+          <h2>Need Custom Service?</h2>
+          <p>Talk to our team and get a tailored plan for your home.</p>
+          <a class="btn btn-primary" href="contact.html">Contact Us</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="Apna Ghar Care logo" />
+          <p>Your trusted partner for property care in Tricity.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="how-it-works.html">How It Works</a>
+          <a href="about.html">About</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <a href="tel:+916280283450">+916280283450</a>
+          <a href="mailto:care@apnagharcare.in">care@apnagharcare.in</a>
+          <span>Tricity, India</span>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <div class="social-row">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="17.4" cy="6.7" r="1.2" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.6.4-1 1-1z" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="9" width="4" height="11" fill="currentColor"/>
+                <circle cx="6" cy="5.8" r="2" fill="currentColor"/>
+                <path d="M11 9h3.8v1.6c.7-1.1 2-1.9 3.8-1.9 3.2 0 4.4 2 4.4 5.2V20h-4v-5.2c0-1.5-.3-2.7-2-2.7-1.7 0-2.2 1.3-2.2 2.6V20H11V9z" fill="currentColor"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-copy">
+        <span>© 2026 Apna Ghar Care. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <a class="wa-float" href="https://wa.me/919876543210?text=Hi%20Apna%20Ghar%20Care%2C%20I%20want%20a%20free%20inspection." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">💬</a>
+    <div class="sticky-mobile-cta">
+      <a href="tel:+916280283450">📞 Call Now</a>
+      <a href="https://wa.me/919876543210?text=Hi%20Apna%20Ghar%20Care%2C%20I%20want%20a%20free%20inspection." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+    </div>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+    <script>
+      // Pricing toggle + WhatsApp booking links for plans.
+      const pricingToggle = document.getElementById("pricingToggle");
+      const monthlyLabel = document.getElementById("monthlyLabel");
+      const yearlyLabel = document.getElementById("yearlyLabel");
+      const priceNodes = document.querySelectorAll(".pricing-card .price[data-monthly]");
+      const periodNodes = document.querySelectorAll(".price-period");
+      const saveTags = document.querySelectorAll(".save-tag");
+      const bookButtons = document.querySelectorAll(".plan-book");
+      const whatsappNumber = "916280283450";
+
+      const updatePricingState = () => {
+        const yearly = pricingToggle.checked;
+        monthlyLabel.classList.toggle("active", !yearly);
+        yearlyLabel.classList.toggle("active", yearly);
+
+        priceNodes.forEach((node) => {
+          const value = yearly ? node.dataset.yearly : node.dataset.monthly;
+          node.textContent = `₹${value}`;
+        });
+
+        periodNodes.forEach((period) => {
+          period.textContent = yearly ? "/year" : "/month";
+        });
+
+        saveTags.forEach((tag) => {
+          tag.classList.toggle("show", yearly);
+        });
+      };
+
+      pricingToggle.addEventListener("change", updatePricingState);
+      updatePricingState();
+
+      bookButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          const plan = button.dataset.plan || "selected";
+          const cycle = pricingToggle.checked ? "yearly" : "monthly";
+          const params = new URLSearchParams({
+            plan,
+            billing: cycle,
+            source: "pricing",
+            phone: whatsappNumber,
+          });
+          window.location.href = `contact.html?${params.toString()}#contactForm`;
+        });
+      });
+    </script>
+  </body>
+</html>
